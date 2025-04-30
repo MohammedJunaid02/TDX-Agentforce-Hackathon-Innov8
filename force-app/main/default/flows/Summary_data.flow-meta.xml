@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>get_summary_apex</name>
+        <label>get summary apex</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <actionName>PatientSummaryService</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>patientId</name>
+            <value>
+                <elementReference>patientId</elementReference>
+            </value>
+        </inputParameters>
+        <outputParameters>
+            <assignToReference>summary</assignToReference>
+            <name>patientSummary</name>
+        </outputParameters>
+    </actionCalls>
+    <apiVersion>63.0</apiVersion>
+    <interviewLabel>Summary data {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Summary data</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>get_summary_apex</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>patientId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>summary</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

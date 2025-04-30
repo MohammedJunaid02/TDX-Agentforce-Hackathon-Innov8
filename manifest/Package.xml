@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+   <!-- Flows -->
+   <types>
+      <members>*</members>
+      <name>Flow</name>
+   </types>
+
+   <!-- Apex Classes -->
+   <types>
+      <members>*</members>
+      <name>ApexClass</name>
+   </types>
+
+   <!-- Apex Triggers -->
+   <types>
+      <members>*</members>
+      <name>ApexTrigger</name>
+   </types>
+
+   <!-- Custom Objects -->
+   <types>
+      <members>*</members>
+      <name>CustomObject</name>
+   </types>
+
+   <!-- Profiles -->
+   <types>
+      <members>*</members>
+      <name>Profile</name>
+   </types>
+
+   <!-- Permission Sets -->
+   <types>
+      <members>*</members>
+      <name>PermissionSet</name>
+   </types>
+
+   <!-- Custom Metadata -->
+   <types>
+      <members>*</members>
+      <name>CustomMetadata</name>
+   </types>
+
+   <!-- Custom Labels -->
+   <types>
+      <members>*</members>
+      <name>CustomLabel</name>
+   </types>
+
+   <!-- Lightning Web Components -->
+   <types>
+      <members>*</members>
+      <name>LightningComponentBundle</name>
+   </types>
+
+   <!-- Validation Rules -->
+   <types>
+      <members>*</members>
+      <name>ValidationRule</name>
+   </types>
+
+   <!-- Workflow Rules -->
+   <types>
+      <members>*</members>
+      <name>Workflow</name>
+   </types>
+
+   <!-- Custom Permissions -->
+   <types>
+      <members>*</members>
+      <name>CustomPermission</name>
+   </types>
+
+   <!-- Record Types -->
+   <types>
+      <members>*</members>
+      <name>RecordType</name>
+   </types>
+
+   <!-- Static Resources -->
+   <types>
+      <members>*</members>
+      <name>StaticResource</name>
+   </types>
+
+   <!-- Reports -->
+   <types>
+      <members>*</members>
+      <name>Report</name>
+   </types>
+
+   <!-- Dashboards -->
+   <types>
+      <members>*</members>
+      <name>Dashboard</name>
+   </types>
+
+   <!-- Flows -->
+   <types>
+      <members>*</members>
+      <name>Flow</name>
+   </types>
+
+   <version>52.0</version>
+</Package>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <assignments>
+        <name>Patient_Record_Prompt_Instructions</name>
+        <elementSubtype>AddPromptInstructions</elementSubtype>
+        <label>Patient Record Prompt Instructions</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <assignmentItems>
+            <assignToReference>$Output.Prompt</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>{!PatientRecordVariable.AI_Value__c}{!PatientRecordVariable.Blood_Pressure__c}{!PatientRecordVariable.Body_Temperature__c}{!PatientRecordVariable.Final_Predicted_Risk_Label__c}{!PatientRecordVariable.Diabetes_Flag__c}
+</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <interviewLabel>Prompt Builder Flow Main {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Prompt Builder Flow Main</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>PromptFlow</processType>
+    <recordLookups>
+        <name>Get_Patient_Records</name>
+        <label>Get Patient Records</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Patient_Record_Prompt_Instructions</targetReference>
+        </connector>
+        <object>Patient__c</object>
+        <outputReference>PatientRecordVariable</outputReference>
+        <queriedFields>Age__c</queriedFields>
+        <queriedFields>AI_Value__c</queriedFields>
+        <queriedFields>Blood_Pressure__c</queriedFields>
+        <queriedFields>AI_Value_predicted__c</queriedFields>
+        <queriedFields>Body_Temperature__c</queriedFields>
+        <queriedFields>Chronic_Kidney_Disease_Flag__c</queriedFields>
+        <queriedFields>Diabetes_Flag__c</queriedFields>
+        <queriedFields>Emergency_Visit_Last_30_Days__c</queriedFields>
+        <queriedFields>Final_Predicted_Risk_Label__c</queriedFields>
+        <queriedFields>Existing_Conditions__c</queriedFields>
+        <queriedFields>Heart_Rate__c</queriedFields>
+        <queriedFields>Gender__c</queriedFields>
+        <queriedFields>Oxygen_Saturation__c</queriedFields>
+        <queriedFields>Smoking_Status__c</queriedFields>
+        <queriedFields>Prior_Hospitalizations__c</queriedFields>
+        <queriedFields>Patient_ID__c</queriedFields>
+        <queriedFields>Risk_Score__c</queriedFields>
+        <queriedFields>Symptoms__c</queriedFields>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Patient_Records</targetReference>
+        </connector>
+        <triggerType>Capability</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>PatientRecordVariable</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Patient__c</objectType>
+    </variables>
+</Flow>
